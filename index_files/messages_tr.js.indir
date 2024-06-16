@@ -1,0 +1,46 @@
+'use strict';
+
+try {
+  angular.module('cartAppTranslations');
+} catch (e) {
+  angular.module('cartAppTranslations', ['pascalprecht.translate']);
+}
+
+angular.module('cartAppTranslations').config(['$translateProvider',
+  function ($translateProvider) {
+    var translations = {
+      'cartWidget': {
+        'sr': {
+          'PRODUCT_PRICE_BEFORE_DISCOUNT': 'Normal Fiyat',
+          'PRODUCT_WAS_REMOVED': '{{ productName }} sepetinizden silindi',
+          'PRODUCT_PRICE_WHEN_THERE_IS_NO_DISCOUNT': 'Fiyat',
+          'PRODUCT_PRICE_AFTER_DISCOUNT': 'İndirimli Fiyat'
+        }
+      },
+      'cartPopUp': {
+        'itemsSubtotal': {
+          'plural': 'Alt Toplam ({{numOfItems}} öge):',
+          'singular': 'Alt Toplam ({{numOfItems}} öge):'
+        },
+        'successMessage': {
+          'title': 'Sepetinize Eklendi'
+        }
+      },
+      'CART_WIDGET_EMPTY_CART_MESSAGE': 'Sepet boş',
+      'CART_WIDGET_CURRENCY_CONVERTER_DISCLAIMER': '{{mainCurrency}} ile işlem gördü',
+      'CART_WIDGET_VIEW_CART_BUTTON': 'Sepeti Görüntüle',
+      'CART_WIDGET_CLOSE_CTA': 'Kapat',
+      'OUT_OF_STOCK_TITLE': 'Tükendi',
+      'CART_TABLE_TOTAL_TITLE': 'TOPLAM',
+      'CART_WIDGET_CLOSE_BUTTON_TITLE': 'Alışveriş Sepet\'inden çık',
+      'SUBTOTAL_TITLE': 'Ara Toplam',
+      'CART_WIDGET_QUANTITY_TITLE': 'ADET: ',
+      'REMOVE_PRODUCT_BUTTON_TITLE': 'Sil',
+      'SKU_TITLE': 'Stok kodu: {{ sku }}',
+      'CART_WIDGET_CART_TITLE': 'Alışveriş Sepeti'
+    };
+    $translateProvider.translations('tr', translations);
+    $translateProvider.translations(translations);
+    $translateProvider.preferredLanguage('tr');
+  }
+]);
